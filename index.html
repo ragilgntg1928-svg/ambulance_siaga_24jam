@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ambulance Siaga 24 Jam</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+:root{
+  --primary:#0b5ed7;
+  --secondary:#25d366;
+  --danger:#dc3545;
+  --dark:#212529;
+}
+
+body{
+  background:#f5f7fa;
+  color:#333;
+  line-height:1.6;
+}
+
+/* ===== HEADER ===== */
+header{
+  background:linear-gradient(135deg,var(--primary),#084298);
+  color:#fff;
+  padding:70px 16px 90px;
+  text-align:center;
+}
+
+header h1{
+  font-size:2.2rem;
+  margin-bottom:10px;
+}
+
+header p{
+  max-width:750px;
+  margin:auto;
+  font-size:1rem;
+}
+
+/* ===== HERO SLIDER (FIX TIDAK KELEBARAN) ===== */
+.hero-images{
+  margin:35px auto 0;
+  max-width:1000px;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  border-radius:22px;
+  box-shadow:0 15px 30px rgba(0,0,0,.35);
+}
+
+.slider{
+  display:flex;
+  height:100%;
+  transition:transform .7s ease-in-out;
+}
+
+.slider img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  flex-shrink:0;
+}
+
+/* ===== CTA ===== */
+.cta{
+  margin-top:30px;
+}
+.cta a{
+  background:var(--secondary);
+  color:#fff;
+  padding:16px 34px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* ===== SECTION ===== */
+section{
+  padding:65px 16px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:45px;
+}
+.section-title h2{
+  color:var(--primary);
+  font-size:2rem;
+}
+
+/* ===== CARDS ===== */
+.cards{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:22px;
+}
+
+.card{
+  background:#fff;
+  padding:30px 22px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 12px 25px rgba(0,0,0,.1);
+}
+
+.card h3{
+  color:var(--primary);
+  margin-bottom:8px;
+}
+
+/* ===== TENTANG KAMI (KOTAK RAPI) ===== */
+.info{
+  display:flex;
+  justify-content:center;
+}
+
+.info-box{
+  max-width:900px;
+  width:100%;
+  background:#fff;
+  padding:35px 30px;
+  border-radius:22px;
+  text-align:center;
+  font-size:1.05rem;
+  line-height:1.8;
+  box-shadow:0 12px 25px rgba(0,0,0,.1);
+}
+
+
+/* ===== GALLERY ===== */
+.gallery{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+}
+
+.gallery img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:18px;
+}
+
+/* ===== CONTACT ===== */
+.contact{
+  background:linear-gradient(135deg,#e9f2ff,#f7fbff);
+  border-radius:25px;
+  padding:45px 25px;
+  text-align:center;
+}
+
+.contact p{
+  margin-top:10px;
+}
+
+.contact a{
+  display:inline-block;
+  margin-top:22px;
+  background:var(--secondary);
+  color:#fff;
+  padding:16px 32px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:var(--dark);
+  color:#ddd;
+  text-align:center;
+  padding:30px 16px;
+}
+
+.footer-social{
+  margin-top:14px;
+}
+
+.footer-social a{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.footer-social img{
+  width:26px;
+}
+
+/* ===== FLOAT BUTTON ===== */
+.whatsapp-float{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:65px;
+  height:65px;
+  background:var(--secondary);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 10px 18px rgba(0,0,0,.35);
+  z-index:999;
+}
+
+.whatsapp-float img{
+  width:34px;
+}
+
+.call-now{
+  position:fixed;
+  bottom:105px;
+  right:25px;
+  background:var(--danger);
+  color:#fff;
+  padding:14px 22px;
+  border-radius:30px;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(min-width:768px){
+  .cards{ grid-template-columns:repeat(3,1fr); }
+  .gallery{ grid-template-columns:repeat(3,1fr); }
+}
+
+
+@media(max-width:600px){
+  .hero-images{ aspect-ratio:4/3; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Ambulance Siaga 24 Jam</h1>
+  <p>
+  Layanan ambulans cepat, aman, dan terpercaya dengan respon sigap 24 jam serta armada lengkap yang siap melayani kapan pun dibutuhkan.
+</p>
+
+
+  <div class="hero-images">
+    <div class="slider" id="slider">
+      <img src="lengkap.jpeg">
+      <img src="nama.jpeg">
+      <img src="24.jpeg">
+      <img src="atas.png">
+    </div>
+  </div>
+
+  <div class="cta">
+    <a href="https://wa.me/+6285218359305">🚑 WhatsApp Sekarang</a>
+  </div>
+</header>
+
+<section>
+  <div class="section-title"><h2>Layanan Kami</h2></div>
+  <div class="cards">
+    <div class="card"><h3>Ambulance Darurat 24 Jam</h3><p>Siap kapan saja tanpa menunggu.</p></div>
+    <div class="card"><h3>Pengantaran Pasien atau Jenazah</h3><p>Pengantaran aman & terkoordinasi.</p></div>
+    <div class="card"><h3>Standby Event</h3><p>Siaga untuk acara & kegiatan.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title"><h2>Mengapa Memilih Kami?</h2></div>
+  <div class="cards">
+    <div class="card"><h3>🚨 Respon Cepat</h3><p>Detik sangat berarti dalam kondisi darurat.</p></div>
+    <div class="card"><h3> 🤝 Pelayanan Ramah dan Empati </h3><p>Ramah, empati, dan mengutamakan keselamatan pasien.</p></div>
+    <div class="card"><h3>🚑 Armada</h3><p>Bersih, terawat, dan siap jalan.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title"><h2>Tentang Kami</h2></div>
+  <div class="info">
+    <div class="info-box">Kami adalah layanan ambulans yang berkomitmen memberikan respon cepat, aman, dan terpercaya dalam setiap kondisi darurat maupun non-darurat. Dengan armada yang terawat dan siap siaga 24 jam, kami hadir untuk membantu masyarakat dengan pelayanan yang mengutamakan keselamatan, kenyamanan, dan ketepatan waktu.</div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title"><h2>Galeri Ambulans</h2></div>
+  <div class="gallery">
+    <img src="a.jpeg">
+    <img src="AR.jpeg">
+    <img src="BR.jpeg">
+    <img src="C.jpeg">
+    <img src="CR.jpeg">
+    <img src="D.jpeg">
+    <img src="DR.jpeg">
+    <img src="ER.jpeg">
+    <img src="uu.jpeg">
+  </div>
+</section>
+
+<section>
+  <div class="contact">
+    <h2>Butuh Ambulance Sekarang?</h2>
+    <p>Jangan tunggu lebih lama, hubungi kami sekarang.</p>
+    <a href="tel:+6285218359305">📞 CALL SEKARANG</a>
+  </div>
+</section>
+
+<footer>
+  © 2025 Ambulance Siaga 24 Jam
+  <div class="footer-social">
+    <a href="https://instagram.com/ambulance_siaga" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
+      Instagram Kami
+    </a>
+  </div>
+</footer>
+
+<a href="tel:+6285218359305" class="call-now">🚨 CALL</a>
+<a href="https://wa.me/6285218359305" class="whatsapp-float">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+</a>
+
+<script>
+const slider = document.getElementById("slider");
+const slides = slider.children.length; // otomatis hitung jumlah foto
+let index = 0;
+
+setInterval(() => {
+  index = (index + 1) % slides;
+  slider.style.transform = `translateX(-${index * 100}%)`;
+}, 3500);
+</script>
+
+</body>
+</html>
